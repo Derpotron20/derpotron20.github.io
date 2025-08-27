@@ -62,7 +62,10 @@ p.paragraph {
     padding: 0;
     padding-right: 40px; /* <--- keeps links away from right edge */
 }
-
+.highlight {
+    background-color: yellow;
+    padding: 2px;
+}
 /* Nav items */
 .mainBar .nav-links li a {
     display: inline-block;
