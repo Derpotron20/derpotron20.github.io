@@ -1,6 +1,10 @@
 <nav class="mainBar">
     <div class="logo">Economics Statistics Webpage</div>
-    <input type="text" id="searchBox" placeholder="Search text..." onchange="searchText()">
+    <div id="search">
+        <input type="text" id="searchBox" placeholder="Search text..." onchange="searchText()">
+        <button onclick="prevMatch()">&lt;</button>
+        <button onclick="nextMatch()">&gt;</button>
+    </div>
     <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../basic_stats.html">Basic Stats</a></li>

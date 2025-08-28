@@ -66,6 +66,15 @@ p.paragraph {
     background-color: yellow;
     padding: 2px;
 }
+.current {
+    background-color: orange; /* current match */
+}
+#search {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 10px;
+}
 /* Nav items */
 .mainBar .nav-links li a {
     display: inline-block;
