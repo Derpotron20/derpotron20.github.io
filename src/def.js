@@ -1,3 +1,10 @@
+fetch("src/components/defs/current.html", { cache: "no-store" }) // No cacheing until navbar is complete to avoid lack of update.
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("current").innerHTML = html;
+  });
+
+  
 fetch("src/components/defs/intro.html", { cache: "no-store" }) // No cacheing until navbar is complete to avoid lack of update.
   .then(res => res.text())
   .then(html => {
