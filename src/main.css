@@ -13,7 +13,7 @@ p.paragraph {
     margin-top: 30px;
 }
 /* Containers */
-.RBA, .ABS {
+.box {
     display: inline-block;
     width: 40%;
     vertical-align: top;
@@ -22,7 +22,7 @@ p.paragraph {
 .container {
     display: flex;
     justify-content: center;
-    gap: 9%;
+    gap: 5%;
 }
 
 /* Fixed home button */
