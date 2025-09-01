@@ -9,80 +9,21 @@
         <div id="navbar"></div>
         <script src="src/navbar.js"></script>
         <div class="container">
-            <div class="box">
-                <h1>RBA Statistics</h1>
-                <ul>
-                    <li>Cashrate:</li>
-                    <p class="list">3.60%</p>
-                    <li>Consumer Price Index (inflation):</li>
-                    <p class="list">2.1%</p>
-                </ul>
-            </div>
-            <div class="box">
-                <h1>ABS Statistics</h1>
-                <ul>
-                    <li>Unemployment:</li>
-                    <p class="list">4.2%</p>
-                    <li>GDP Change Quarterly (March):</li>
-                    <p class="list">0.2%</p>
-                    <li>GDP Change YTD:</li>
-                    <p class="list">1.3%</p>
-                </ul>
-            </div>
+            <div class="box" id="rba"></div>
+            <div class="box" id="abs"></div>
         </div>
         <div class="container">
             <div>
-                <h3>2025-2026 Government Budget:</h3>
-                <ul>
-                    <li>Underlying cash balance</li>
-                    <p class="list">$42.1 bn</p>
-                    <li>Super Guarantee:</li>
-                    <p class="list">12%</p>
-                    <li>Tax Cut:</li>
-                    <p class="list">16% to 15%</p>
-                    <li>Net Foreign Debt Increase:</li>
-                    <p class="list">14.3%</p>
-                    <li>Net Foreign Debt:</li>
-                    <p class="list">$1,402,114 mn</p>
-                    <li>Gross Debt</li>
-                    <p class="list">$1,022 bn</p>
-                </ul>
+                <div id="budget"></div>
             </div>
             <div>
-                <h3>Consumers/Labour:</h3>
-                <ul>
-                    <li>Unemployment:</li>
-                    <p class="list">4.2%</p>
-                    <li>Consumer Price Index (inflation):</li>
-                    <p class="list">2.1%</p>
-                    <li>Real unit labour costs:</li>
-                    <p class="list">2.6%</p>
-                    <li>Participation Rate:</li>
-                    <p class="list">67%</p>
-                </ul>
-                <h3>Cashrate Related:</h3>
-                <ul>
-                    <li>Cashrate:</li>
-                    <p class="list">3.60%</p>
-                    <li>Previous Cashrate:</li>
-                    <p class="list">3.85%</p>
-                    <li>Interest Rate Differential (USA):</li>
-                    <p class="list">-0.90%</p>
-                </ul>
+                <div id="gdp"></div>
+                <div id="cashrate"></div>
             </div>
             <div>
-                <h3>GDP Stats (Next release 2/09/2025):</h3>
-                <ul>
-                    <li>GDP Change YTD:</li>
-                    <p class="list">1.3%</p>
-                    <li>GDP Change Quarterly (March):</li>
-                    <p class="list">0.2%</p>
-                    <li>GDP per capita:</li>
-                    <p class="list">-0.4%</p>
-                    <li>GDP per hour worked:</li>
-                    <p class="list">-1.0%</p>
-                </ul>
+                <div id="consumer"></div>
             </div>
         </div>
+        <script src="src/stat.js"></script>
     </body>
 </html>
