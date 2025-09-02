@@ -5,6 +5,9 @@ p.list {
 ul {
     margin-left: 30px;
 }
+ul.secondary {
+    margin-left: auto;
+}
 h1 {
     text-align: center;
 }
