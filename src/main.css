@@ -16,11 +16,17 @@ p.paragraph {
     margin-top: 30px;
 }
 /* Containers */
-.box {
+.box1 .box2 {
     display: inline-block;
-    width: 40%;
     vertical-align: top;
+}
+.box1 {
+    width: 40%;
     border: 3px solid green;
+}
+.box2 {
+    border: 3px solid green;
+    width: 60%;
 }
 .container {
     display: flex;

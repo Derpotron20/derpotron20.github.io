@@ -10,10 +10,22 @@ fetch("src/components/stats/cashrate.html") // No cacheing until navbar is compl
     document.getElementById("cashrate").innerHTML = html;
   });
 
-fetch("src/components/stats/gdp.html") // No cacheing until navbar is complete to avoid lack of update.
+fetch("src/components/stats/gdp-quarter.html") // No cacheing until navbar is complete to avoid lack of update.
   .then(res => res.text())
   .then(html => {
-    document.getElementById("gdp").innerHTML = html;
+    document.getElementById("gdp-quarter").innerHTML = html;
+  });
+
+fetch("src/components/stats/gdp-annual.html") // No cacheing until navbar is complete to avoid lack of update.
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("gdp-annual").innerHTML = html;
+  });
+
+fetch("src/components/stats/gdp-total.html") // No cacheing until navbar is complete to avoid lack of update.
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("gdp-total").innerHTML = html;
   });
 
 fetch("src/components/stats/budget.html") // No cacheing until navbar is complete to avoid lack of update.
