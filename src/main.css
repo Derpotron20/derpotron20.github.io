@@ -44,12 +44,14 @@ p.paragraph {
     align-items: stretch; /* equal height columns */
 }
 
-/* Each column in three-col */
+/* Each column in multi-column container */
 .container.three-col > div {
-    flex: 0 0 250px;  /* fixed column width, adjust if needed */
+    flex: 1;             /* flexible width, fills container */
     padding: 10px;
     position: relative;
+    min-width: 200px;    /* optional: prevents columns from shrinking too small */
 }
+
 
 /* Vertical dividers using left border (simpler) */
 .container.three-col > div + div {
