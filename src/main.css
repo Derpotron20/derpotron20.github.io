@@ -15,6 +15,7 @@ p.paragraph {
     text-align: center;
     margin-top: 30px;
 }
+
 /* Containers */
 .box1 .box2 {
     display: inline-block;
@@ -22,16 +23,51 @@ p.paragraph {
 }
 .box1 {
     width: 40%;
-    border: 3px solid green;
+    border: 3px solid green; /* keep green border */
 }
 .box2 {
-    border: 3px solid green;
+    border: 3px solid green; /* keep green border */
     width: 60%;
 }
 .container {
     display: flex;
     justify-content: center;
     gap: 5%;
+    position: relative;
+}
+
+/* Three-column or multi-column layout */
+.container.three-col {
+    display: flex;
+    justify-content: center;
+    gap: 30px;            /* fixed gap instead of percentage */
+    align-items: stretch; /* equal height columns */
+}
+
+/* Each column in three-col */
+.container.three-col > div {
+    flex: 0 0 250px;  /* fixed column width, adjust if needed */
+    padding: 10px;
+    position: relative;
+}
+
+/* Vertical dividers using left border (simpler) */
+.container.three-col > div + div {
+    border-left: 2px solid #ccc;
+    padding-left: 20px; /* spacing after the line */
+}
+
+/* Responsive stacking on smaller screens */
+@media (max-width: 900px) {
+    .container.three-col {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .container.three-col > div {
+        flex: 1 1 auto;
+        border-left: none; /* remove dividers when stacked */
+        padding-left: 0;
+    }
 }
 
 /* Fixed home button */
@@ -79,10 +115,10 @@ p.paragraph {
     background-color: orange; /* current match */
 }
 #search {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 10px;
 }
 /* Nav items */
 .mainBar .nav-links li a {
