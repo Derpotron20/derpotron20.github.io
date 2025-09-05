@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin');
+
 /* Text elements */
 p.list {
     margin: 3px 10px 0px 20px;
@@ -11,7 +13,7 @@ ul.secondary {
 h1 {
     text-align: center;
 }
-p.paragraph {
+.paragraph {
     text-align: center;
     margin-top: 30px;
 }
@@ -116,6 +118,32 @@ p.paragraph {
     padding: 0;
     padding-right: 40px; /* <--- keeps links away from right edge */
 }
+
+footer {
+    background-color: rgb(245, 245, 234);
+    box-shadow: 0 50vh 0 50vh rgb(245, 245, 234);
+    font-family: Cabin;
+    line-height: 0.8;
+    padding-top: 3px;
+}
+
+#lastUpdated, #lastUpdate {
+    display: flex;
+    justify-content: space-between; /* push label left, daysAgo right */
+    align-items: center;
+    padding: 0 300px; /* 20px space from screen edges */
+}
+
+.daysAgo {
+    color: rgb(17, 102, 171);
+    font-weight: normal;
+    width: auto; /* remove fixed width */
+    text-align: right;
+}
+
+
+
+
 .highlight {
     background-color: yellow;
     padding: 2px;
