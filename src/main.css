@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin');
+
 /* Text elements */
 p.list {
     margin: 3px 10px 0px 20px;
@@ -11,7 +13,7 @@ ul.secondary {
 h1 {
     text-align: center;
 }
-p.paragraph {
+.paragraph {
     text-align: center;
     margin-top: 30px;
 }
@@ -109,6 +111,17 @@ p.paragraph {
     padding: 0;
     padding-right: 40px; /* <--- keeps links away from right edge */
 }
+
+footer {
+    background-color: rgb(129, 129, 129);
+    box-shadow: 0 50vh 0 50vh rgb(129, 129, 129);
+    text-align: center;
+    font-family: Cabin;
+    line-height: 0.8;
+    padding-top: 3px;
+}
+
+
 .highlight {
     background-color: yellow;
     padding: 2px;
