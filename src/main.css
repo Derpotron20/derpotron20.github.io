@@ -6,6 +6,7 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    font-family: Cabin;
 }
 
 /* Push page content below fixed navbar */
@@ -98,49 +99,138 @@ h1 {
     right: 20px;
 }
 
+/* ===== NAVBAR STYLING ===== */
 .mainBar {
     display: flex;
-    justify-content: space-between; /* logo left, links right */
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: blue;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #004080, #0066cc);
     color: white;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    gap: 20px;
+    box-sizing: border-box;
 }
 
-/* Logo placeholder (can add text/image later) */
+/* Logo */
 .mainBar .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: white;
-}
-
-.logo {
     text-decoration: none;
+    transition: color 0.2s;
 }
-.logo:hover {
-    color: rgb(215, 215, 215);
+.mainBar .logo:hover {
+    color: #ddd;
 }
 
-/* Nav list */
+/* Search bar */
+#search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    flex: 1;
+    max-width: 300px;
+    margin: 0 auto; /* center between logo and nav links */
+}
+#searchBox {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 6px;
+    border-radius: 6px;
+    flex: 1;
+}
+
+/* Nav links */
 .mainBar .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 12px;
     margin: 0;
     padding: 0;
-    padding-right: 40px; /* <--- keeps links away from right edge */
+    flex-shrink: 0;
+    padding-right: 10px; /* <<< key: moves links left from scrollbar */
+}
+.mainBar .nav-links li a {
+    background-color: rgba(255,255,255,0.15);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background-color 0.25s;
+}
+.mainBar .nav-links li a:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+
+/* ===== SEARCH BAR ===== */
+#search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    justify-self: center; /* keeps search bar centered */
+}
+#searchBox {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 6px;
+    border-radius: 6px;
+    width: 160px;
+}
+
+/* Search navigation buttons */
+.search-btn {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.search-btn:hover {
+    background-color: #003d80;
+}
+
+/* Case toggle button */
+#caseToggle {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+#caseToggle {
+    background-color: #f1c40f; /* insensitive */
+    color: #000;
+}
+#caseToggle.sensitive {
+    background-color: #4a4a4a; /* sensitive */
+    color: #fff;
 }
 
 /* Footer styling */
 footer {
     background-color: rgb(245, 245, 234);
     box-shadow: 0 50vh 0 50vh rgb(245, 245, 234);
-    font-family: Cabin;
     line-height: 1.2;
     padding: 6px 0;
     margin-top: auto; /* pushes footer to bottom of page */
@@ -167,29 +257,8 @@ footer {
 .current {
     background-color: orange; /* current match */
 }
-#search {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: 10px;
-}
-/* Nav items */
-.mainBar .nav-links li a {
-    display: inline-block;
-    background-color: #0056b3;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px 14px;
-    border-radius: 6px;
-    transition: background-color 0.2s;
-}
 
-/* Hover effect */
-.mainBar .nav-links li a:hover {
-    background-color: #003d80;
-}
-
+/* Image containers */
 .img-container {
     object-fit: contain;
     display: inline-block;
@@ -201,18 +270,4 @@ footer {
 img {
     height: 200px;
     margin: 80px 0px;
-}
-
-#caseToggle {
-  color: #000;
-  background-color: #f1c40f; /* insensitive */
-  border: 1px solid #666;
-  padding: 5px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-#caseToggle.sensitive {
-  background-color: #4a4a4a; /* sensitive */
-  color: #fff;
 }
