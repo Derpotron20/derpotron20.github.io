@@ -5,7 +5,8 @@ fetch("src/components/footer.html")
     document.getElementById("footer").innerHTML = html;
 
     // Footer now exists, so run the days-ago calculations
-    showDaysAgo("lastUpdated", "lastUpdatedDaysAgo");
+    showDaysAgo("statLastUpdated", "statLastUpdatedDaysAgo");
+    showDaysAgo("defLastUpdated", "defLastUpdatedDaysAgo");
     showDaysAgo("lastUpdate", "latestUpdateDaysAgo");
   });
 
