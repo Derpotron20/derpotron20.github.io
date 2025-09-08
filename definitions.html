@@ -9,8 +9,13 @@
         <div id="navbar"></div>
         <script src="src/dynamic-loading/navbar.js"></script>
         <main>
-            <div class="container">
-                <div class="box2" id="current"></div>
+            <div class="card">
+                <button class="card-header">Current</button>
+                <div class="card-content">
+                    <div class="container">
+                        <div class="box2" id="current"></div>
+                    </div>
+                </div>
             </div>
 
 
@@ -57,26 +62,9 @@
                     </div>
                 </div>
                 <script src="src/dynamic-loading/def.js"></script>
+                <script src="src/dynamic-loading/cards.js"></script>
             </div>
         </main>
-        <script>
-            document.querySelectorAll(".card-header").forEach(header => {
-                header.addEventListener("click", () => {
-                    const card = header.parentElement;
-                    const content = card.querySelector(".card-content");
-
-                    if (content.classList.contains("open")) {
-                        // Collapse
-                        content.style.maxHeight = null;
-                        content.classList.remove("open");
-                    } else {
-                        // Expand to fit text
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        content.classList.add("open");
-                    }
-                });
-            });
-        </script>
         <div id="footer"></div>
         <script src="src/dynamic-loading/foot.js"></script>
     </body>

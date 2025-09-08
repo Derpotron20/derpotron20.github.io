@@ -44,9 +44,20 @@ h1 {
     border: 3px solid green; /* keep green border */
 }
 .box2 {
-    border: 3px solid green; /* keep green border */
     width: 60%;
+    border: none; /* remove old border */
 }
+
+/* Current section */
+#current {
+    border: 3px solid green; /* green border same width as before */
+    padding: 10px;
+    border-radius: 8px;
+    width: 60%;           /* same as original box2 */
+    box-sizing: border-box; /* ensures padding fits inside border */
+    margin: 0 auto;       /* centers the section inside the card */
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -171,7 +182,6 @@ h1 {
     background-color: rgba(255,255,255,0.3);
 }
 
-
 /* ===== SEARCH BAR ===== */
 #search {
     display: flex;
@@ -268,6 +278,7 @@ img {
     height: 200px;
     margin: 80px 0px;
 }
+
 /* Expandable cards */
 .card {
     border: 2px solid #ccc;
@@ -306,7 +317,6 @@ img {
 .card-content.open {
     padding: 12px 16px;
 }
-
 
 /* Expanded state */
 .card.active .card-content {
