@@ -53,7 +53,7 @@ function searchText() {
   let text = document.getElementById("searchBox").value.trim();
   if (!text) return;
 
-  // escape special characters, build fresh regex
+  // Build regex for the *entire search string*, escaped
   let regex = new RegExp(escapeRegex(text), "gi");
 
   highlightMatches(document.body, regex);
