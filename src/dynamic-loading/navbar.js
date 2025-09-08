@@ -6,6 +6,7 @@ fetch("src/components/navbar.html")
 
 let matches = [];
 let currentIndex = -1;
+let caseSensitive = false; // default: insensitive
 
 function removeHighlights() {
   document.querySelectorAll(".highlight").forEach(span => {
@@ -22,24 +23,30 @@ function escapeRegex(str) {
 function highlightMatches(node, regex) {
   if (node.nodeType === 3) { // text node
     let text = node.nodeValue;
-    if (regex.test(text)) {
-      let matchedText = text.replace(regex, m => `<span class="highlight">${m}</span>`);
-      let temp = document.createElement("span");
-      temp.innerHTML = matchedText;
-      node.replaceWith(...temp.childNodes);
+    let match;
+    while ((match = regex.exec(text)) !== null) {
+      let highlight = document.createElement("span");
+      highlight.className = "highlight";
+      highlight.textContent = match[0];
+
+      // split the text node at the match
+      let after = node.splitText(match.index);
+      after.nodeValue = after.nodeValue.substring(match[0].length);
+      node.parentNode.insertBefore(highlight, after);
+
+      node = after; // continue scanning remainder
+      text = node.nodeValue;
+      regex.lastIndex = 0; // reset for new node
     }
   } else if (
     node.nodeType === 1 &&
     node.childNodes &&
     !["SCRIPT", "STYLE", "INPUT"].includes(node.tagName)
   ) {
-    // ⬇️ skip highlighting inside already-highlighted spans
     if (node.classList.contains("highlight")) return;
-
-    node.childNodes.forEach(child => highlightMatches(child, regex));
+    [...node.childNodes].forEach(child => highlightMatches(child, regex));
   }
 }
-
 
 function searchText() {
   removeHighlights();
@@ -47,8 +54,9 @@ function searchText() {
   let text = document.getElementById("searchBox").value.trim();
   if (!text) return;
 
-  // escape special characters, build fresh regex
-  let regex = new RegExp(escapeRegex(text), "gi");
+  // use correct flags depending on toggle
+  let flags = caseSensitive ? "g" : "gi";
+  let regex = new RegExp(escapeRegex(text), flags);
 
   highlightMatches(document.body, regex);
 
@@ -77,4 +85,17 @@ function prevMatch() {
   if (matches.length === 0) return;
   currentIndex = (currentIndex - 1 + matches.length) % matches.length;
   updateCurrent();
+}
+
+function toggleCaseSensitivity() {
+  caseSensitive = !caseSensitive;
+  let btn = document.getElementById("caseToggle");
+
+  if (caseSensitive) {
+    btn.classList.add("sensitive");
+  } else {
+    btn.classList.remove("sensitive");
+  }
+
+  searchText(); // re-run search so it updates instantly
 }
