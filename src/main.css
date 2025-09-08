@@ -146,7 +146,7 @@ footer {
     margin-top: auto; /* pushes footer to bottom of page */
 }
 
-#lastUpdated, #lastUpdate {
+#defLastUpdated, #statLastUpdated, #lastUpdate {
     display: flex;
     justify-content: space-between; /* push label left, daysAgo right */
     align-items: center;
