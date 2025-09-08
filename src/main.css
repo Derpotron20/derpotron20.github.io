@@ -202,3 +202,17 @@ img {
     height: 200px;
     margin: 80px 0px;
 }
+
+#caseToggle {
+  color: #000;
+  background-color: #f1c40f; /* insensitive */
+  border: 1px solid #666;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#caseToggle.sensitive {
+  background-color: #4a4a4a; /* sensitive */
+  color: #fff;
+}

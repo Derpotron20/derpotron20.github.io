@@ -6,6 +6,7 @@ fetch("src/components/navbar.html")
 
 let matches = [];
 let currentIndex = -1;
+let caseSensitive = false; // default: insensitive
 
 function removeHighlights() {
   document.querySelectorAll(".highlight").forEach(span => {
@@ -53,8 +54,9 @@ function searchText() {
   let text = document.getElementById("searchBox").value.trim();
   if (!text) return;
 
-  // Build regex for the *entire search string*, escaped
-  let regex = new RegExp(escapeRegex(text), "gi");
+  // use correct flags depending on toggle
+  let flags = caseSensitive ? "g" : "gi";
+  let regex = new RegExp(escapeRegex(text), flags);
 
   highlightMatches(document.body, regex);
 
@@ -83,4 +85,17 @@ function prevMatch() {
   if (matches.length === 0) return;
   currentIndex = (currentIndex - 1 + matches.length) % matches.length;
   updateCurrent();
+}
+
+function toggleCaseSensitivity() {
+  caseSensitive = !caseSensitive;
+  let btn = document.getElementById("caseToggle");
+
+  if (caseSensitive) {
+    btn.classList.add("sensitive");
+  } else {
+    btn.classList.remove("sensitive");
+  }
+
+  searchText(); // re-run search so it updates instantly
 }
