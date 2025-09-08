@@ -61,11 +61,22 @@ function searchText() {
   highlightMatches(document.body, regex);
 
   matches = Array.from(document.querySelectorAll(".highlight"));
+
+  // Expand cards containing matches
+  matches.forEach(match => {
+    let cardContent = match.closest(".card-content");
+    if (cardContent && !cardContent.classList.contains("open")) {
+      cardContent.style.maxHeight = cardContent.scrollHeight + "px";
+      cardContent.classList.add("open");
+    }
+  });
+
   if (matches.length > 0) {
     currentIndex = 0;
     updateCurrent();
   }
 }
+
 
 function updateCurrent() {
   matches.forEach(m => m.classList.remove("current"));
