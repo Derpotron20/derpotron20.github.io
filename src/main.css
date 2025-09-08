@@ -271,3 +271,48 @@ img {
     height: 200px;
     margin: 80px 0px;
 }
+/* Expandable cards */
+.card {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* The clickable header */
+.card-header {
+    width: 100%;
+    text-align: left;
+    background-color: #004080;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.card-header:hover {
+    background-color: #0066cc;
+}
+
+.card-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 16px;
+    background: #f9f9f9;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.card-content.open {
+    padding: 12px 16px;
+}
+
+
+/* Expanded state */
+.card.active .card-content {
+    max-height: 500px; /* adjust if your text is longer */
+    padding: 12px 16px;
+}

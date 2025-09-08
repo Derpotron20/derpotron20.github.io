@@ -17,7 +17,12 @@
             <h1 style="text-align: center; padding-top: 20px;">All Definitions</h1>
             <div class="container three-col">
                 <div>
-                    <div id="cons_busi"></div>
+                    <div class="card">
+                        <button class="card-header">Consumer & Business</button>
+                        <div class="card-content">
+                            <div id="cons_busi"></div>
+                        </div>
+                    </div>
                     <div id="labour"></div>
                     <div id="gov"></div>
                 </div>
@@ -29,6 +34,24 @@
                 <script src="src/dynamic-loading/def.js"></script>
             </div>
         </main>
+        <script>
+            document.querySelectorAll(".card-header").forEach(header => {
+                header.addEventListener("click", () => {
+                    const card = header.parentElement;
+                    const content = card.querySelector(".card-content");
+
+                    if (content.classList.contains("open")) {
+                        // Collapse
+                        content.style.maxHeight = null;
+                        content.classList.remove("open");
+                    } else {
+                        // Expand to fit text
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.classList.add("open");
+                    }
+                });
+            });
+        </script>
         <div id="footer"></div>
         <script src="src/dynamic-loading/foot.js"></script>
     </body>
