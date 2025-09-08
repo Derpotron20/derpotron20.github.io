@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin');
 
+/* Make page stretch full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push page content below fixed navbar */
+body {
+    padding-top: 70px; /* adjust to navbar height */
+}
+
+/* Main content grows to fill available space */
+main {
+    flex: 1;
+}
+
 /* Text elements */
 p.list {
     margin: 3px 10px 0px 20px;
@@ -54,7 +72,6 @@ h1 {
     min-width: 200px;    /* optional: prevents columns from shrinking too small */
 }
 
-
 /* Vertical dividers using left border (simpler) */
 .container.three-col > div + div {
     border-left: 2px solid #ccc;
@@ -102,6 +119,13 @@ h1 {
     color: white;
 }
 
+.logo {
+    text-decoration: none;
+}
+.logo:hover {
+    color: rgb(215, 215, 215);
+}
+
 /* Nav list */
 .mainBar .nav-links {
     list-style: none;
@@ -112,31 +136,30 @@ h1 {
     padding-right: 40px; /* <--- keeps links away from right edge */
 }
 
+/* Footer styling */
 footer {
     background-color: rgb(245, 245, 234);
     box-shadow: 0 50vh 0 50vh rgb(245, 245, 234);
     font-family: Cabin;
-    line-height: 0.8;
-    padding-top: 3px;
+    line-height: 1.2;
+    padding: 6px 0;
+    margin-top: auto; /* pushes footer to bottom of page */
 }
 
 #lastUpdated, #lastUpdate {
     display: flex;
     justify-content: space-between; /* push label left, daysAgo right */
     align-items: center;
-    padding: 0 300px; /* 20px space from screen edges */
+    padding: 0 300px; /* adjust spacing from screen edges */
 }
 
 .daysAgo {
     color: rgb(17, 102, 171);
     font-weight: normal;
-    width: auto; /* remove fixed width */
     text-align: right;
 }
 
-
-
-
+/* Highlights */
 .highlight {
     background-color: yellow;
     padding: 2px;
@@ -165,12 +188,6 @@ footer {
 /* Hover effect */
 .mainBar .nav-links li a:hover {
     background-color: #003d80;
-}
-
-/* Push page content below fixed navbar */
-body {
-    margin: 0;
-    padding-top: 70px; /* adjust to navbar height */
 }
 
 .img-container {
