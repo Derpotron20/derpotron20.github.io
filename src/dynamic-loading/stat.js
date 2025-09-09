@@ -4,6 +4,12 @@ fetch("src/components/stats/consumer.html") // No cacheing until navbar is compl
     document.getElementById("consumer").innerHTML = html;
   });
 
+fetch("src/components/stats/prev_consumer.html") // No cacheing until navbar is complete to avoid lack of update.
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("prev_consumer").innerHTML = html;
+  });
+
 fetch("src/components/stats/cashrate.html") // No cacheing until navbar is complete to avoid lack of update.
   .then(res => res.text())
   .then(html => {
