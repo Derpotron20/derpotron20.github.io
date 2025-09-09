@@ -10,10 +10,10 @@ fetch("src/components/stats/prev_consumer.html") // No cacheing until navbar is 
     document.getElementById("prev_consumer").innerHTML = html;
   });
 
-fetch("src/components/stats/cashrate.html") // No cacheing until navbar is complete to avoid lack of update.
+fetch("src/components/stats/cash-rate.html") // No cacheing until navbar is complete to avoid lack of update.
   .then(res => res.text())
   .then(html => {
-    document.getElementById("cashrate").innerHTML = html;
+    document.getElementById("cash-rate").innerHTML = html;
   });
 
 fetch("src/components/stats/gdp-quarter.html") // No cacheing until navbar is complete to avoid lack of update.
