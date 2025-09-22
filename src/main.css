@@ -18,7 +18,7 @@ main {
 }
 
 /* Text elements */
-p.list {
+p.list, .paragraph, .home-text {
     margin: 3px 10px 0px 20px;
 }
 
@@ -238,7 +238,7 @@ footer {
 }
 
 /* Images */
-.img-container {
+.img-container, .home-images {
     display: flex;
     justify-content: center;
     gap: 16%;
@@ -309,16 +309,15 @@ img {
 /* ===== RESPONSIVE LAYOUT ===== */
 @media (max-width: 900px) {
 
-    /* Adjust body padding for taller stacked navbar */
     body {
-        padding-top: 140px; /* stacked navbar height */
+        padding-top: 140px; /* taller stacked navbar */
     }
 
     .graph {
         width: 100%;
     }
 
-    /* ===== Fullscreen touch/hold image with rotation ===== */
+    /* ===== FULLSCREEN TOUCH IMAGES ===== */
     img.fullscreen-on-touch {
         transition: all 0.3s ease;
         cursor: pointer;
@@ -328,19 +327,46 @@ img {
         position: fixed;
         top: 50%;
         left: 50%;
-        width: 100vh; /* swap width/height for rotation */
+        width: 100vh;
         height: 100vw;
         transform: translate(-50%, -50%) rotate(90deg);
-        object-fit: contain; /* maintain aspect ratio */
+        object-fit: contain;
         margin: 0;
         border: none;
         z-index: 5000;
         background-color: rgba(0,0,0,0.85);
     }
 
-    /* Optional: smaller gap between stacked columns */
+    /* ===== HOME PAGE TEXT & IMAGES ===== */
+    .home-text {
+        max-width: 90%;
+        margin: 0 auto 20px auto; /* add bottom gap */
+        padding: 0 10px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .home-images {
+        display: flex;
+        flex-direction: column; /* stack vertically on mobile */
+        align-items: center;
+        justify-content: center;
+        gap: 20px; /* vertical gap between images */
+        margin-bottom: 30px; /* gap below images */
+    }
+
+    .home-images img {
+        width: 70%; /* slightly smaller */
+        max-width: 200px; /* cap maximum size */
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+
+    /* Stacked columns adjustments */
     .container.three-col {
-        gap: 16px;  /* vertical spacing between sections */
+        gap: 16px;
         padding-left: 4px;
         padding-right: 4px;
         flex-direction: column;
