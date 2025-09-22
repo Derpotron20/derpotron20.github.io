@@ -1,61 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin');
 
-/* Make page stretch full height */
+/* ===== GLOBAL STYLES ===== */
 html, body {
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
-    font-family: Cabin;
+    font-family: Cabin, sans-serif;
 }
 
-/* Push page content below fixed navbar */
 body {
-    padding-top: 70px; /* adjust to navbar height */
+    padding-top: 70px; /* space for fixed navbar */
 }
 
-/* Main content grows to fill available space */
 main {
-    flex: 1;
+    flex: 1; /* grow to fill available space */
 }
 
 /* Text elements */
 p.list {
     margin: 3px 10px 0px 20px;
 }
+
 ul.secondary {
     margin-left: auto;
 }
+
 h1 {
     text-align: center;
 }
+
 .paragraph {
     text-align: center;
     margin-top: 30px;
 }
 
 /* Containers */
-.box1 .box2 {
+.box1, .box2 {
     display: inline-block;
     vertical-align: top;
 }
+
 .box1 {
     width: 40%;
-    border: 3px solid green; /* keep green border */
-}
-.box2 {
-    width: 60%;
-    border: none; /* remove old border */
+    border: 3px solid green;
 }
 
-/* Current section */
+.box2 {
+    width: 60%;
+    border: none;
+}
+
 #current {
-    border: 3px solid green; /* green border same width as before */
+    border: 3px solid green;
     padding: 10px;
     border-radius: 8px;
-    width: 60%;           /* same as original box2 */
-    box-sizing: border-box; /* ensures padding fits inside border */
-    margin: 0 auto;       /* centers the section inside the card */
+    width: 60%;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .container {
@@ -65,39 +67,23 @@ h1 {
     position: relative;
 }
 
-/* Three-column or multi-column layout */
 .container.three-col {
     display: flex;
     justify-content: center;
-    gap: 30px;            /* fixed gap instead of percentage */
-    align-items: stretch; /* equal height columns */
+    gap: 30px;
+    align-items: stretch;
 }
 
-/* Each column in multi-column container */
 .container.three-col > div {
-    flex: 1;             /* flexible width, fills container */
+    flex: 1;
     padding: 10px;
     position: relative;
-    min-width: 200px;    /* optional: prevents columns from shrinking too small */
+    min-width: 200px;
 }
 
-/* Vertical dividers using left border (simpler) */
 .container.three-col > div + div {
     border-left: 2px solid #ccc;
-    padding-left: 20px; /* spacing after the line */
-}
-
-/* Responsive stacking on smaller screens */
-@media (max-width: 900px) {
-    .container.three-col {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .container.three-col > div {
-        flex: 1 1 auto;
-        border-left: none; /* remove dividers when stacked */
-        padding-left: 0;
-    }
+    padding-left: 20px;
 }
 
 /* Fixed home button */
@@ -125,7 +111,6 @@ h1 {
     box-sizing: border-box;
 }
 
-/* Logo */
 .mainBar .logo {
     font-size: 22px;
     font-weight: bold;
@@ -133,11 +118,11 @@ h1 {
     text-decoration: none;
     transition: color 0.2s;
 }
+
 .mainBar .logo:hover {
     color: #ddd;
 }
 
-/* Search bar */
 #search {
     display: flex;
     align-items: center;
@@ -148,8 +133,9 @@ h1 {
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
     flex: 1;
     max-width: 300px;
-    margin: 0 auto; /* center between logo and nav links */
+    margin: 0 auto;
 }
+
 #searchBox {
     border: none;
     outline: none;
@@ -157,18 +143,18 @@ h1 {
     padding: 6px;
     border-radius: 6px;
     flex: 1;
+    width: 160px;
 }
 
-/* Nav links */
 .mainBar .nav-links {
     list-style: none;
     display: flex;
     gap: 12px;
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
     flex-shrink: 0;
-    padding-right: 10px; /* <<< key: moves links left from scrollbar */
 }
+
 .mainBar .nav-links li a {
     background-color: rgba(255,255,255,0.15);
     color: white;
@@ -178,31 +164,12 @@ h1 {
     border-radius: 6px;
     transition: background-color 0.25s;
 }
+
 .mainBar .nav-links li a:hover {
     background-color: rgba(255,255,255,0.3);
 }
 
-/* ===== SEARCH BAR ===== */
-#search {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: white;
-    padding: 4px 8px;
-    border-radius: 8px;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-    justify-self: center; /* keeps search bar centered */
-}
-#searchBox {
-    border: none;
-    outline: none;
-    font-size: 15px;
-    padding: 6px;
-    border-radius: 6px;
-    width: 160px;
-}
-
-/* Search navigation buttons */
+/* Search buttons */
 .search-btn {
     background-color: #0056b3;
     color: white;
@@ -212,6 +179,7 @@ h1 {
     cursor: pointer;
     transition: background-color 0.2s;
 }
+
 .search-btn:hover {
     background-color: #003d80;
 }
@@ -224,30 +192,33 @@ h1 {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.2s, color 0.2s;
-}
-#caseToggle {
-    background-color: #f1c40f; /* insensitive */
+    background-color: #f1c40f; 
     color: #000;
 }
+
 #caseToggle.sensitive {
-    background-color: #4a4a4a; /* sensitive */
+    background-color: #4a4a4a;
     color: #fff;
 }
 
-/* Footer styling */
+/* ===== FOOTER ===== */
 footer {
     background-color: rgb(245, 245, 234);
-    box-shadow: 0 50vh 0 50vh rgb(245, 245, 234);
     line-height: 1.2;
-    padding: 6px 0;
-    margin-top: auto; /* pushes footer to bottom of page */
+    padding: 6px 12px;
+    margin-top: auto;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 #defLastUpdated, #statLastUpdated, #lastUpdate {
     display: flex;
-    justify-content: space-between; /* push label left, daysAgo right */
+    justify-content: space-between;
     align-items: center;
-    padding: 0 300px; /* adjust spacing from screen edges */
+    padding: 0 12px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .daysAgo {
@@ -261,29 +232,30 @@ footer {
     background-color: yellow;
     padding: 2px;
 }
+
 .current {
-    background-color: orange; /* current match */
+    background-color: orange;
 }
 
-/* Image containers */
+/* Images */
 .img-container {
-    object-fit: contain;
-    display: inline-block;
-    vertical-align: top;
-    gap: 16%;
     display: flex;
     justify-content: center;
+    gap: 16%;
 }
+
 img {
     height: 200px;
-    margin: 80px 0px;
+    margin: 80px 0;
 }
+
 .graph {
     width: 60%;
     height: auto;
     display: block;
     margin: auto;
 }
+
 /* Expandable cards */
 .card {
     border: 2px solid #ccc;
@@ -292,7 +264,7 @@ img {
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-/* The clickable header */
+
 .card-header {
     width: 100%;
     text-align: left;
@@ -305,11 +277,6 @@ img {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.2s;
-}
-
-.main-card {
-    text-align: center;
-    font-size: 20px;
 }
 
 .card-header:hover {
@@ -328,9 +295,8 @@ img {
     padding: 12px 16px;
 }
 
-/* Expanded state */
 .card.active .card-content {
-    max-height: 500px; /* adjust if your text is longer */
+    max-height: 500px;
     padding: 12px 16px;
 }
 
@@ -338,4 +304,93 @@ img {
     text-align: right;
     font-size: 12px;
     font-family:'Gill Sans';
+}
+
+/* ===== RESPONSIVE LAYOUT ===== */
+@media (max-width: 900px) {
+
+    /* Adjust body padding for taller stacked navbar */
+    body {
+        padding-top: 140px; /* stacked navbar height */
+    }
+
+    /* Optional: smaller gap between stacked columns */
+    .container.three-col {
+        gap: 16px;  /* vertical spacing between sections */
+        padding-left: 4px;  /* small extra padding for overall container */
+        padding-right: 4px;
+        flex-direction: column;
+    }
+
+    /* Stacked columns with horizontal padding */
+    .container.three-col > div {
+        border-left: none !important;  /* remove vertical divider */
+        padding-left: 12px;            /* left padding from screen edge */
+        padding-right: 12px;           /* right padding from screen edge */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Navbar adjustments */
+    .mainBar {
+        flex-direction: column;      
+        align-items: stretch;
+        padding: 8px;
+        gap: 6px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mainBar .logo {
+        flex: 0 0 auto;
+        font-size: 18px;
+        word-wrap: break-word;
+        margin-bottom: 4px;
+    }
+
+    #search {
+        flex: 1 1 auto;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .mainBar .nav-links {
+        flex: 1 1 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 0;
+        justify-content: flex-start;
+        min-width: 0;
+    }
+
+    .mainBar .nav-links li a {
+        font-size: 14px;
+        padding: 4px 8px;
+        white-space: nowrap;
+        flex-shrink: 1;
+        box-sizing: border-box;
+    }
+
+    #homeButton {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    /* Footer adjustments */
+    footer {
+        width: 100%;
+        padding: 6px 8px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .card, .container > div {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 }
