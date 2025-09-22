@@ -314,19 +314,42 @@ img {
         padding-top: 140px; /* stacked navbar height */
     }
 
+    .graph {
+        width: 100%;
+    }
+
+    /* ===== Fullscreen touch/hold image with rotation ===== */
+    img.fullscreen-on-touch {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    img.fullscreen-on-touch.zoomed {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100vh; /* swap width/height for rotation */
+        height: 100vw;
+        transform: translate(-50%, -50%) rotate(90deg);
+        object-fit: contain; /* maintain aspect ratio */
+        margin: 0;
+        border: none;
+        z-index: 5000;
+        background-color: rgba(0,0,0,0.85);
+    }
+
     /* Optional: smaller gap between stacked columns */
     .container.three-col {
         gap: 16px;  /* vertical spacing between sections */
-        padding-left: 4px;  /* small extra padding for overall container */
+        padding-left: 4px;
         padding-right: 4px;
         flex-direction: column;
     }
 
-    /* Stacked columns with horizontal padding */
     .container.three-col > div {
-        border-left: none !important;  /* remove vertical divider */
-        padding-left: 12px;            /* left padding from screen edge */
-        padding-right: 12px;           /* right padding from screen edge */
+        border-left: none !important;
+        padding-left: 12px;
+        padding-right: 12px;
         margin-left: 0 !important;
         margin-right: 0 !important;
         max-width: 100%;
