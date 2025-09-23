@@ -28,16 +28,17 @@
 
             <!-- modify this form HTML and place wherever you want your form -->
             <form action="https://formspree.io/f/myznyngb" method="POST">
-            <label>
-                Your email:
+                <label for="name">Name:</label>
+                <input type="text" name="name">
+
+                <label for="email">Email:</label>
                 <input type="email" name="email">
-            </label>
-            <label>
-                Your message:
+
+                <label for="message">Message:</label>
                 <textarea name="message"></textarea>
-            </label>
-            <!-- your other form fields go here -->
-            <button type="submit">Send</button>
+
+                <div></div> <!-- empty cell -->
+                <button type="submit">Submit</button>
             </form>
         </main>
 
