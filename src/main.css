@@ -456,7 +456,7 @@ form {
     grid-template-columns: auto 1fr; /* label shrinks to fit, input fills */
     gap: 1rem;
     align-items: center;
-    margin: 0 auto;
+    margin: 30px auto;
     background: #f9f9f9;
     padding: 1.5rem;
     border-radius: 12px;
