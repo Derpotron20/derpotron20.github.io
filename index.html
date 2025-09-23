@@ -26,10 +26,19 @@
                 </a>
             </div>
 
-            <div class="home-text paragraph">
-                If you wish to provide feedback or wish for a new statistic to be added to the site,<br>
-                just email me at "26bragam@student.pac.nsw.edu.au", and state your wishes.
-            </div>
+            <!-- modify this form HTML and place wherever you want your form -->
+            <form action="https://formspree.io/f/myznyngb" method="POST">
+            <label>
+                Your email:
+                <input type="email" name="email">
+            </label>
+            <label>
+                Your message:
+                <textarea name="message"></textarea>
+            </label>
+            <!-- your other form fields go here -->
+            <button type="submit">Send</button>
+            </form>
         </main>
 
         <div id="footer"></div>
