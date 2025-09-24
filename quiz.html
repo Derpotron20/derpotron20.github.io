@@ -32,6 +32,25 @@
                 <div id="question"></div>
                 <textarea id="input"></textarea>
             </div>
+            <h1 class="sub-heading">Definitions Quiz</h1>
+            <div id="def-section-select">
+                <form id="def-section-form">
+                    <label><input type="checkbox" name="section" value="intro"><span>Intro to Economics</span></label>
+                    <label><input type="checkbox" name="section" value="cons_busi"><span>Consumers & Business</span></label>
+                    <label><input type="checkbox" name="section" value="markets"><span>Markets</span></label>
+                    <label><input type="checkbox" name="section" value="labour"><span>Labour Market</span></label>
+                    <label><input type="checkbox" name="section" value="finance"><span>Financial Markets</span></label>
+                    <label><input type="checkbox" name="section" value="gov"><span>Government and the Economy</span></label>
+                </form>
+                <button id="def-start-btn">Start Definitions Quiz</button>
+            </div>
+
+            <div id="def-quiz" style="display:none;">
+                <h1 class="sub-heading">Definition Value Quiz</h1>
+                <div id="def-question"></div>
+                    <textarea id="def-input"></textarea>
+            </div>
+
         </main>
 
         <script src="src/dynamic-loading/quiz.js"></script>

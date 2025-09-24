@@ -511,8 +511,8 @@ button:hover {
     background-color: #0066cc;
 }
 
-/* ===== QUIZ STYLES ===== */
-#quiz {
+/* ===== QUIZ STYLES (Stats + Definitions) ===== */
+#quiz, #def-quiz {
     max-width: 600px;
     margin: 40px auto;
     padding: 2rem;
@@ -522,13 +522,14 @@ button:hover {
     text-align: center;
 }
 
-#quiz h1.sub-heading {
+#quiz h1.sub-heading,
+#def-quiz h1.sub-heading {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     color: #004080;
 }
 
-#question {
+#question, #def-question {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
@@ -536,7 +537,7 @@ button:hover {
     min-height: 3rem; /* prevents layout jump */
 }
 
-#input {
+#input, #def-input {
     width: 100%;
     min-height: 2.5rem;
     padding: 0.75rem 1rem;
@@ -549,29 +550,29 @@ button:hover {
     text-align: center;
 }
 
-#input:focus {
+#input:focus, #def-input:focus {
     outline: none;
     border-color: #0066cc;
     box-shadow: 0 0 0 2px rgba(0,102,204,0.2);
 }
 
 /* Feedback (correct/wrong) */
-#question p {
+#question p, #def-question p {
     margin: 0.5rem 0;
     font-size: 1rem;
 }
 
-#question p:first-child {
+#question p:first-child, #def-question p:first-child {
     font-weight: bold;
     font-size: 1.1rem;
 }
 
-#question strong {
+#question strong, #def-question strong {
     color: #004080;
 }
 
 /* Next button styling */
-#next-btn {
+#next-btn, #def-next-btn {
     margin-top: 1.2rem;
     padding: 0.7rem 1.2rem;
     background-color: #004080;
@@ -583,9 +584,10 @@ button:hover {
     transition: background-color 0.2s;
 }
 
-#next-btn:hover {
+#next-btn:hover, #def-next-btn:hover {
     background-color: #0066cc;
 }
+
 /* Section selector cards */
 #section-form {
     display: flex;
