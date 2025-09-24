@@ -39,7 +39,11 @@ fetch("src/components/stats/budget.html") // No cacheing until navbar is complet
   .then(html => {
     document.getElementById("budget").innerHTML = html;
   });
-
+fetch("src/components/stats/budget-winners-losers.html") // No cacheing until navbar is complete to avoid lack of update.
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("winners-losers").innerHTML = html;
+  });
 fetch("src/components/stats/rba.html") // No cacheing until navbar is complete to avoid lack of update.
   .then(res => res.text())
   .then(html => {
