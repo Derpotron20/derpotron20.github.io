@@ -510,3 +510,79 @@ button {
 button:hover {
     background-color: #0066cc;
 }
+
+/* ===== QUIZ STYLES ===== */
+#quiz {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#quiz h1.sub-heading {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #004080;
+}
+
+#question {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    color: #222;
+    min-height: 3rem; /* prevents layout jump */
+}
+
+#input {
+    width: 100%;
+    min-height: 2.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    resize: none;
+    text-align: center;
+}
+
+#input:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 2px rgba(0,102,204,0.2);
+}
+
+/* Feedback (correct/wrong) */
+#question p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+#question p:first-child {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#question strong {
+    color: #004080;
+}
+
+/* Next button styling */
+#next-btn {
+    margin-top: 1.2rem;
+    padding: 0.7rem 1.2rem;
+    background-color: #004080;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#next-btn:hover {
+    background-color: #0066cc;
+}
