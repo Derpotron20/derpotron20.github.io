@@ -13,6 +13,11 @@ body {
     padding-top: 70px; /* space for fixed navbar */
 }
 
+.sub-heading {
+    text-align: center;
+    padding-top: 20px;
+}
+
 .form-wrapper {
     display: flex;
     justify-content: center;
