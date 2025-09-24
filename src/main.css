@@ -26,6 +26,9 @@ body {
     max-width: 600px;
 }
 
+main {
+    flex: 1;
+}
 
 /* Text elements */
 p.list, .paragraph, .home-text {
