@@ -12,12 +12,28 @@
         <script src="src/dynamic-loading/navbar.js"></script>
 
         <main>
-            <div id="quiz">
+            <div id="section-select">
+                <h1 class="sub-heading">Choose Sections</h1>
+                <form id="section-form">
+                    <label><input type="checkbox" name="section" value="budget"> Budget</label><br>
+                    <label><input type="checkbox" name="section" value="gdp-quarter"> GDP (Quarterly)</label><br>
+                    <label><input type="checkbox" name="section" value="gdp-annual"> GDP (Annual)</label><br>
+                    <label><input type="checkbox" name="section" value="gdp-total"> GDP (Total)</label><br>
+                    <label><input type="checkbox" name="section" value="cash-rate"> Cash Rate</label><br>
+                    <label><input type="checkbox" name="section" value="consumer"> Consumer Index</label><br>
+                    <label><input type="checkbox" name="section" value="prev_consumer"> Previous Consumer Index</label><br>
+                    <!-- add more as needed -->
+                </form>
+                <button id="start-btn">Start Quiz</button>
+            </div>
+
+            <div id="quiz" style="display:none;">
                 <h1 class="sub-heading">Statistic Value Quiz</h1>
                 <div id="question"></div>
                 <textarea id="input"></textarea>
             </div>
         </main>
+
         <script src="src/dynamic-loading/quiz.js"></script>
         <div id="footer"></div>
         <script src="src/dynamic-loading/foot.js"></script>
