@@ -25,6 +25,11 @@ fetch("src/components/defs/markets.html") // No cacheing until navbar is complet
     document.getElementById("markets").innerHTML = html;
   });
 
+fetch("src/components/defs/pure-comp.html") // No cacheing until navbar is complete to avoid lack of update.
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("pure-comp").innerHTML = html;
+  });
 
 fetch("src/components/defs/labour.html") // No cacheing until navbar is complete to avoid lack of update.
   .then(res => res.text())
