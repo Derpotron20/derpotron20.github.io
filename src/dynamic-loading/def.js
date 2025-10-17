@@ -50,3 +50,27 @@ fetch("src/components/defs/gov.html") // No cacheing until navbar is complete to
   .then(html => {
     document.getElementById("gov").innerHTML = html;
   });
+
+fetch("src/components/defs/issues.html") // No cacheing until navbar is complete to avoid lack of update.
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("issues").innerHTML = html;
+  });
+
+fetch("src/components/defs/australia.html") // No cacheing until navbar is complete to avoid lack of update.
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("australia").innerHTML = html;
+  });
+
+fetch("src/components/defs/policies.html") // No cacheing until navbar is complete to avoid lack of update.
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("policies").innerHTML = html;
+  });
+
+fetch("src/components/defs/global.html") // No cacheing until navbar is complete to avoid lack of update.
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("global").innerHTML = html;
+  });
