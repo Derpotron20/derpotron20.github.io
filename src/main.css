@@ -737,3 +737,11 @@ button:hover {
 #def-start-btn:hover {
     background-color: #0066cc;
 }
+
+.announcement {
+    background-color: rgba(127, 127, 127, 0.25);
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+}
